@@ -1,0 +1,13 @@
+<% @books.each do |book| %>
+<%= link_to book_path(book) do %>
+<div class="container">
+  <div class="card-product mt-3">
+    <img src="https://cdn-icons-png.flaticon.com/512/5773/5773749.png" />
+      <div class="card-product-infos">
+      <h2><%= book.title %></h2>
+      <p><%= book.author_name %></p>
+      </div>
+  </div>
+</div>
+  <% end %>
+<% end %>
