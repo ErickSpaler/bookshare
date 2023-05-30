@@ -1,7 +1,15 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-3">
+<<<<<<< HEAD
         <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
+=======
+    <% if @book.image.nil? %>
+        <%= image_tag 'https://static.vecteezy.com/ti/vetor-gratis/p1/5814205-ilustracaoial-menina-triste-gratis-vetor.jpg', width: "300px" %>
+        <% else  %>
+        <%= image_tag @book.image, width: "300px" %>
+        <% end %>
+>>>>>>> master
     </div>
     <div class="col-9">
       <h2>Book: <%= @book.title %></h2>
