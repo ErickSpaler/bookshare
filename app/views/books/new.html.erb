@@ -1,0 +1,16 @@
+<h1>Disponibilizar para locação</h1>
+
+<div class="container">
+  <%= simple_form_for(@book) do |form| %>
+  <div class="row">
+
+    <%= form.input :title %>
+    <%= form.input :author_name %>
+    <%= form.input :genre %>
+    <%= form.input :published_year %>
+    <%= form.input :description %>
+    <%= form.submit "Salvar", class: 'btn btn-primary' %>
+
+  </div>
+  <% end %>
+</div>
