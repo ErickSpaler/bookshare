@@ -1,6 +1,8 @@
+<div class="container">
+<h3>My Titles</h3>
 <% @books.each do |book| %>
 <%= link_to book_path(book) do %>
-<div class="container">
+
   <div class="card-product mt-3">
     <img src="https://cdn-icons-png.flaticon.com/512/5773/5773749.png" />
       <div class="card-product-infos">
