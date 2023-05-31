@@ -92,10 +92,12 @@
     </div>
     <div class="book-suggestion">
       <% @books.each do |book| %>
+      <%= link_to book_path(book) do %>
         <div class="book-box" onclick="selectBook('O Livreiro de Cabul')">
             <div class="book-title"><%= book.title %></div>
             <div class="book-author"><%= book.author_name %></div>
             <div class="book-genre"><%= book.genre %></div>
         </div>
+        <% end %>
       <% end %>
     </div>
