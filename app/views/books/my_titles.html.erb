@@ -1,20 +1,21 @@
 <div class="container">
 <h3>My Titles</h3>
+  <div class="row justify-content-around">
+    <% if @books.count.zero? %>
+      <h2>Nenhum livro disponível</h2>
+    <% end %>
 
-<% if @books.count.zero? %>
-  <h2>Nenhum livro disponível</h2>
-<% end %>
+    <% @books.each do |book| %>
 
-<% @books.each do |book| %>
-
-  <div class="card-product mt-3">
-    <img src="https://cdn-icons-png.flaticon.com/512/5773/5773749.png" />
-      <div class="card-product-infos">
-      <h2><%= link_to book.title, book_path(book) %></h2>
-      <p><%= book.author_name %></p>
-      <%= link_to  "Edit", edit_book_path(book) %>
-      <%= link_to  "Delete", book_path(book), data:{turbo_method: :delete} %>
+      <div class="card-product mt-3 col-5">
+        <%= image_tag book.image %>
+          <div class="card-product-infos">
+          <h2><%= link_to book.title, book_path(book) %></h2>
+          <p>Author: <%= book.author_name %></p>
+          <%= link_to  "Edit", edit_book_path(book) %>
+          <%= link_to  "Delete", book_path(book), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
       </div>
+      <% end %>
   </div>
-  <% end %>
 </div>

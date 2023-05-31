@@ -19,7 +19,7 @@
       <%= form.input :author_name, label: "Autor"  %>
 
       <div class="flex-box">
-      <%= form.input :genre, label: "Gênero" %>
+      <%= form.input :genre, label: "Gênero", collection: %w[Ficção Romance Autoajuda Biografia Suspense] %>
       <%= form.input :published_year, label: "Ano de publicação" %>
       </div>
 
