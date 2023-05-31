@@ -15,6 +15,6 @@ Rails.application.routes.draw do
     end
 
   end
-  resources :rents, only: :index
+  resources :rents, only: [:index, :destroy]
   get '/books', to: 'books#index'
 end
