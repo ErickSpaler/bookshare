@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "books#index"
   resources :books do
     collection do
       get :my_titles
