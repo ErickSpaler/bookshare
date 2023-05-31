@@ -1,1 +1,23 @@
-<h1><%= @book.title %></h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3">
+        <%= image_tag 'https://static.vecteezy.com/ti/vetor-gratis/p1/5814205-ilustracaoial-menina-triste-gratis-vetor.jpg', width: "300px" %>
+    </div>
+    <div class="col-9">
+      <h2>Book: <%= @book.title %></h2>
+      <h4>Author Name: <%= @book.author_name %></h4>
+      <h4>Description: <%= @book.description %></h4>
+      <h4>Published Year: <%= @book.published_year %></h4>
+      <h4>Genre: <%= @book.genre %></h4>
+      <button class="btn btn-dark">QUERO ALUGAR</button>
+    </div>
+  </div>
+
+  <div class="user-info d-flex flex-column bd-highlight mt-3 mb-3 border border-secondary">
+    <h3>User Info</h3>
+    <h4>Name: <%= @book.user.name %></h4>
+    <h4>Address: <%= @book.user.address %></h4>
+  </div>
+
+  <%= link_to "Back to home", books_path, class: "btn btn-dark" %>
+</div>
