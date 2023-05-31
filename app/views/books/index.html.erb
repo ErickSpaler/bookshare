@@ -96,7 +96,7 @@
         <% else  %>
         <%= image_tag book.image, width: "300px" %>
         <% end %>
-            <div class="book-title"><%= book.title %></div>
+            <div class="book-title"><%= book.title.truncate(22) %></div>
             <div class="book-author"><%= book.author_name %></div>
             <div class="book-genre"><%= book.genre %></div>
         </div>
