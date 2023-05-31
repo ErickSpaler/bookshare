@@ -9,6 +9,7 @@ user = User.create!(email: 'pedro@hotmail.com', password: '123123', name: 'pedro
     author_name: Faker::Book.author,
     published_year: rand(1900..2023),
     genre: Faker::Book.genre,
+    description: "laurem ipsum dollor amit",
     user: user
   )
 end
