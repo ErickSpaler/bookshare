@@ -1,16 +1,26 @@
-<h1>Disponibilizar para locação</h1>
-
 <div class="container">
-  <%= simple_form_for(@book) do |form| %>
-  <div class="row">
 
-    <%= form.input :title %>
-    <%= form.input :author_name %>
-    <%= form.input :genre %>
-    <%= form.input :published_year %>
-    <%= form.input :description %>
-    <%= form.submit "Salvar", class: 'btn btn-primary' %>
+  <div class="justify-content">
+    <h1>Disponibilizar para locação</h1>
+  </div>
+
+  <%= simple_form_for(@book) do |form| %>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+      <%= form.input :image %>
+    </div>
+
+    <div class="col-md-6">
+      <%= form.input :title %>
+      <%= form.input :author_name %>
+      <%= form.input :genre %>
+      <%= form.input :published_year %>
+      <%= form.input :description %>
+      <%= form.submit "Salvar", class: 'btn btn-primary' %>
+    </div>
 
   </div>
+
   <% end %>
 </div>
