@@ -1,11 +1,10 @@
 .card-book {
   overflow: hidden;
-  height: 240px;
+  height: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: inline-flex;
   align-items: start;
-  border-radius: 5%;
-  padding: 10px;
+  border-radius: 10px;
 }
 
 .card-product img {
@@ -28,6 +27,10 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
+.card-book .card-book-infos {
   padding: 16px;
+}
+
+.card-book-infos {
+  padding: 25px;
 }
