@@ -2,72 +2,7 @@
 <html>
 <head>
     <title>Bookshare</title>
-    <style>
-        .left-column {
-            float: left;
-            width: 25%;
-            margin-left: 50px;
-        }
-
-        .genres {
-            margin-top: 70px;
-            font-weight: bold;
-            font-size: 28px;
-        }
-
-        .genre-list {
-            list-style-type: none;
-            padding-left: 0;
-            cursor: pointer;
-            font-size: 24px;
-            line-height: 36px;
-        }
-
-        .my-titles-button {
-            margin-top: 30px;
-            font-size: 28px;
-        }
-
-        .search-box {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .search-box input {
-            font-size: 24px;
-        }
-
-        .book-suggestion {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .book-suggestion .book-box {
-            width: 300px;
-            height: 200px;
-            background-color: #eee;
-            margin: 20px;
-            padding: 10px;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .book-suggestion .book-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .book-suggestion .book-author {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        .book-suggestion .book-genre {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-    </style>
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="left-column">
@@ -75,16 +10,11 @@
             Gêneros
         </div>
         <ul class="genre-list">
-            <li onclick="selectGenre('Ficcao Cientifica')">Ficção Científica</li>
-            <li onclick="selectGenre('Fantasia')">Fantasia</li>
-            <li onclick="selectGenre('Mistério/Thriller')">Mistério/Thriller</li>
+            <li onclick="selectGenre('Ficção')">Ficção</li>
             <li onclick="selectGenre('Romance')">Romance</li>
-            <li onclick="selectGenre('Não Ficção')">Não Ficção</li>
             <li onclick="selectGenre('Biografia')">Biografia</li>
             <li onclick="selectGenre('Autoajuda')">Autoajuda</li>
             <li onclick="selectGenre('Suspense')">Suspense</li>
-            <li onclick="selectGenre('Literatura Clássica')">Literatura Clássica</li>
-            <li onclick="selectGenre('Poesia')">Poesia</li>
         </ul>
         <a class="btn btn-lg btn-info" href="/books/my_titles">Meus Títulos</a>
     </div>
