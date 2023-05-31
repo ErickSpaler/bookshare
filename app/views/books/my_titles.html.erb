@@ -16,7 +16,7 @@
       <div class="card-product mt-3 col-5">
         <%= image_tag book.image %>
           <div class="card-product-infos">
-          <h2><%= link_to book.title, book_path(book) %></h2>
+          <h3><%= link_to book.title, book_path(book) %></h3>
           <p>Author: <%= book.author_name %></p>
           <%= link_to  "Edit", edit_book_path(book) %>
           <%= link_to  "Delete", book_path(book), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
