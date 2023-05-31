@@ -1,16 +1,19 @@
-<h1>Disponibilizar para locação</h1>
+<div class="container text-center mt-3">
+  <h1>Disponibilizar para locação</h1>
+</div>
 
 <div class="container">
   <%= simple_form_for(@book) do |form| %>
-  <div class="row">
+  <div class="row col-6">
 
     <%= form.input :title %>
     <%= form.input :author_name %>
     <%= form.input :genre %>
     <%= form.input :published_year %>
     <%= form.input :description %>
-    <%= form.submit "Salvar", class: 'btn btn-primary' %>
 
+
+    <%= form.submit "Salvar", class: 'btn btn-primary' %>
   </div>
   <% end %>
 </div>
