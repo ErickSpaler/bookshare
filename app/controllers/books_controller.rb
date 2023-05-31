@@ -20,6 +20,10 @@ class BooksController < ApplicationController
     end
   end
 
+  def my_titles
+    @books = Book.where(user: current_user)
+  end
+
   def show
     @book = Book.find(params[:id])
   end
