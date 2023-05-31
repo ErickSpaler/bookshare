@@ -87,13 +87,15 @@
         </ul>
         <button class="my-titles-button">Meus Títulos</button>
     </div>
-    <div class="search-box">
-        <input type="text" placeholder="Pesquisar título">
-    </div>
     <div class="book-suggestion">
       <% @books.each do |book| %>
       <%= link_to book_path(book) do %>
         <div class="book-box" onclick="selectBook('O Livreiro de Cabul')">
+        <% if book.image.nil? %>
+        <%= image_tag 'https://static.vecteezy.com/ti/vetor-gratis/p1/5814205-ilustracaoial-menina-triste-gratis-vetor.jpg', width: "300px" %>
+        <% else  %>
+        <%= image_tag book.image, width: "300px" %>
+        <% end %>
             <div class="book-title"><%= book.title %></div>
             <div class="book-author"><%= book.author_name %></div>
             <div class="book-genre"><%= book.genre %></div>
