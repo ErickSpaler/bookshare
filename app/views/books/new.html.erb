@@ -1,7 +1,7 @@
 
 <div class="container">
 
-  <div class="justify-content">
+  <div class="text-center mt-3">
     <h1>Disponibilizar para locação</h1>
   </div>
 
@@ -14,19 +14,21 @@
       </div>
     </div>
 
-    <div class="col-md-6">
-      <%= form.input :title %>
-      <%= form.input :author_name %>
-      <%= form.input :genre %>
-      <%= form.input :published_year %>
-      <%= form.input :description %>
-      <%= form.submit "Salvar", class: 'btn btn-primary' %>
+    <div class="col-md-5">
+      <%= form.input :title, label: "Título" %>
+      <%= form.input :author_name, label: "Autor"  %>
+
+      <div class="flex-box">
+      <%= form.input :genre, label: "Gênero" %>
+      <%= form.input :published_year, label: "Ano de publicação" %>
+      </div>
+
+      <%= form.input :description, label: "Descrição" %>
+      <%= form.input :price, label: "Preço da diária" %>
+
+
+      <%= form.submit "Salvar", class: 'btn btn-primary col-3' %>
     </div>
-
-
-
-    <%= form.submit "Salvar", class: 'btn btn-primary' %>
-  </div>
 
   <% end %>
 </div>
