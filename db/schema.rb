@@ -18,13 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_171139) do
     t.bigint "user_id", null: false
     t.string "title"
     t.string "author_name"
+    t.string "description"
     t.integer "published_year"
     t.boolean "available", default: true
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.string "description"
     t.decimal "price"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
