@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
   belongs_to :user
-  validates :title, :author_name, :published_year, :genre, :description, presence: true
+  has_many :rents, dependent: :destroy
+  validates :title, :author_name, :published_year, :genre, :description, :price, presence: true
 end
