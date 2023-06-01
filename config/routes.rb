@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   end
   resources :rents, only: :index
+  get '/books', to: 'books#index'
 end

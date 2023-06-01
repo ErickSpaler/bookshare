@@ -10,11 +10,11 @@
             Gêneros
         </div>
         <ul class="genre-list">
-            <li onclick="selectGenre('Ficção')">Ficção</li>
-            <li onclick="selectGenre('Romance')">Romance</li>
-            <li onclick="selectGenre('Biografia')">Biografia</li>
-            <li onclick="selectGenre('Autoajuda')">Autoajuda</li>
-            <li onclick="selectGenre('Suspense')">Suspense</li>
+          <li><%= link_to "Ficção", books_path(genre: "Ficção") %></li>
+          <li><%= link_to "Romance", books_path(genre: "Romance") %></li>
+          <li><%= link_to "Biografia", books_path(genre: "Biografia") %></li>
+          <li><%= link_to "Autoajuda", books_path(genre: "Autoajuda") %></li>
+          <li><%= link_to "Suspense", books_path(genre: "Suspense") %></li>
         </ul>
         <a class="btn btn-lg btn-info" href="/books/my_titles">Meus Títulos</a>
     </div>
