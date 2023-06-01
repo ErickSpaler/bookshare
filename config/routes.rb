@@ -5,5 +5,8 @@ Rails.application.routes.draw do
     collection do
       get :my_titles
     end
+    member do
+      get :edit
+    end
   end
 end
