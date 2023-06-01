@@ -93,13 +93,16 @@
       <%= link_to book_path(book) do %>
         <div class="book-box" onclick="selectBook('O Livreiro de Cabul')">
         <% if book.image.nil? %>
-        <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
+        <div class="border border-5">
+          <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
+
         <% else  %>
         <%= image_tag book.image, width: "300px" %>
         <% end %>
             <div class="book-title"><%= book.title.truncate(22) %></div>
             <div class="book-author"><%= book.author_name %></div>
             <div class="book-genre"><%= book.genre %></div>
+          </div>
         </div>
         <% end %>
       <% end %>
