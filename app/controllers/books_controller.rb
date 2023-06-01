@@ -1,9 +1,12 @@
 class BooksController < ApplicationController
   skip_before_action :authenticate_user!,only:[:index, :show]
   def index
-    @books = Book.all
+    if params[:genre].present?
+      @books = Book.where(genre: params[:genre])
+    else
+      @books = Book.all
+    end
   end
-
   def new
     @book = Book.new
   end
