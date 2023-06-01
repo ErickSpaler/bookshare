@@ -1,9 +1,35 @@
+
 <div class="container">
-  <h1>Editar</h1>
+
+  <div class="text-center mt-3">
+    <h1>Editar</h1>
+  </div>
+
+  <%= simple_form_for(@book) do |form| %>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center" data-controller='preview'>
+      <%= form.input :image, input_html: {data: {action: 'input->preview#img'}} %>
+      <div data-preview-target='image'>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <%= form.input :title, label: "Título" %>
+      <%= form.input :author_name, label: "Autor"  %>
+
+      <div class="flex-box">
+      <%= form.input :genre, label: "Gênero" %>
+      <%= form.input :published_year, label: "Ano de publicação" %>
+      </div>
+
+      <%= form.input :description, label: "Descrição" %>
+      <%= form.input :price, label: "Preço da diária" %>
 
 
+      <%= form.submit "Salvar", class: 'btn btn-primary col-3' %>
 
+    </div>
 
-
-
+  <% end %>
 </div>

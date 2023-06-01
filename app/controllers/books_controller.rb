@@ -33,6 +33,23 @@ class BooksController < ApplicationController
     redirect_to my_titles_books_path
   end
 
+  def edit
+    @book = Book.find(params[:id])
+
+
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+   redirect_to my_titles_books_path, notice: 'Livro atualizado com sucesso'
+   else
+   render :edit, status: :unprocessable_entity
+   end
+
+  end
+
+
   private
 
   def book_params
