@@ -1,9 +1,12 @@
+ <div class="text-center mt-3">
+    <h1>My rents</h1>
+  </div>
+
+
 <ul>
   <% @rents.each do |rent| %>
   <li>
     <%= rent.book.title %>
-
-
   </li>
   <% end %>
 
