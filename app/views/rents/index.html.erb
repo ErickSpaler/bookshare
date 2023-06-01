@@ -1,16 +1,23 @@
- <div class="text-center mt-3">
-    <h1>My rents</h1>
-  </div>
+<div class="container">
+<h3>My Rents</h3>
 
+  <div class="row justify-content-around">
+      <% if @rents.count.zero? %>
+        <h3>Nenhum livro alugado</h3>
+      <% end %>
 
-<ul>
   <% @rents.each do |rent| %>
-  <li>
-    <%= rent.book.title %>
-  </li>
+
+  <div class="card-product mt-3 col-5">
+        <% if rent.book.image.nil? %>
+          <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
+        <% else  %>
+        <%= image_tag rent.book.image %>
+        <% end %>
+          <div class="card-product-infos">
+            <p><%= rent.book.title %></p>
+          </div>
+  </div>
   <% end %>
-
-
-
-
-</ul>
+  </div>
+</div>
