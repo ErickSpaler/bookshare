@@ -11,4 +11,11 @@ class RentsController < ApplicationController
   def index
     @rents = Rent.where(user: current_user)
   end
+
+  def destroy
+    @rent = Rent.find(params[:id])
+    @rent.destroy
+    redirect_to rents_path
+  end
+
 end
