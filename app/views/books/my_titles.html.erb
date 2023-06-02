@@ -16,8 +16,8 @@
           <h3><%= link_to book.title, book_path(book), class: "text-decoration-none link-dark" %></h3>
           <p>Author: <%= book.author_name %></p>
           <div class="d-flex">
-            <%= button_to  "Edit", edit_book_path(book), class: "me-2" %>
-            <%= button_to  "Delete", book_path(book), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= link_to  "Edit", edit_book_path(book), class: "btn btn-sm btn-dark me-2" %>
+            <%= button_to  "Delete", book_path(book), method: :delete, class: "btn btn-sm btn-dark me-2", data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
           </div>
       </div>

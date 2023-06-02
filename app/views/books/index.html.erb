@@ -38,10 +38,10 @@
                 <div class="book-price">R$<%= book.price %></div>
                 <% if book.rents.count.zero? %>
                   <%= simple_form_for [book, @rent] do |f| %>
-                    <%= f.submit "Quero aluguar", class: "btn btn-dark" %>
+                    <%= f.submit "Quero alugar", class: "btn btn-dark" %>
                   <% end %>
                 <% else %>
-                  <span class="badge rounded-pill text-bg-danger">Título indisponível</span>
+                  <h4><span class="badge rounded-pill text-bg-danger badge-lg">Título indisponível</span></h4>
                 <% end %>
 
               </div>

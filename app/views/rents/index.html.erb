@@ -2,28 +2,27 @@
   My Rents
 </div>
 <div class="container">
-      <div class="mt-3">
+  <div class="mt-3">
       <div class="row justify-content-around">
           <% if @rents.count.zero? %>
             <h3>Nenhum livro alugado</h3>
           <% end %>
-          </div>
+
 
       <% @rents.each do |rent| %>
+        <div class="card-product mt-3 col-5 ml-5">
+          <% if rent.book.image.nil? %>
+            <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
+          <% else  %>
+          <%= image_tag rent.book.image %>
 
-      <div class="card-product mt-3 col-5">
-            <% if rent.book.image.nil? %>
-              <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
-            <% else  %>
-            <%= image_tag rent.book.image %>
-
-            <% end %>
-              <div class="card-product-infos">
-                <h4><%= rent.book.title %></h4>
-                 <%= button_to "Devolver livro", rent_path(rent), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
-              </div>
-      </div>
+          <% end %>
+            <div class="card-product-infos">
+              <h4><%= rent.book.title %></h4>
+                <%= button_to "Devolver livro", rent_path(rent), method: :delete, data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+            </div>
+        </div>
       <% end %>
-
+      </div>
   </div>
 </div>
