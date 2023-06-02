@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   skip_before_action :authenticate_user!,only:[:index, :show]
   def index
+    @rent = Rent.new
     if params[:genre].present?
       @books = Book.where(genre: params[:genre])
     else

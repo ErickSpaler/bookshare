@@ -44,3 +44,21 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.book-card {
+  padding: 15px;
+  margin-bottom: 20px;
+  color: black;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  border: 1px solid #F7F7F7;
+
+}
+
+.book-card:hover {
+  box-shadow: 0 0 16px rgba(0,0,0,0.4);
+  transition: 0.8s;
+
+}
