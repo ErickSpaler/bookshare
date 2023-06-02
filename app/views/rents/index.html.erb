@@ -18,7 +18,7 @@
             <% end %>
               <div class="card-product-infos">
                 <h4><%= rent.book.title %></h4>
-                 <%= link_to "Devolver livro", rent_path(rent), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+                 <%= button_to "Devolver livro", rent_path(rent), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
               </div>
       </div>
       <% end %>
