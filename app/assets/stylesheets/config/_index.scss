@@ -39,8 +39,7 @@
 
 .book-suggestion .book-box {
   width: 300px;
-  height: 200px;
-  background-color: #eee;
+  min-height: 200px;
   margin: 20px;
   padding: 10px;
   display: inline-block;

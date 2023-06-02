@@ -8,35 +8,45 @@
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://sunrise.ng/wp-content/uploads/2021/02/Book-Giving-Day.jpg)">
     Bem-vindo ao Bookshare
   </div>
-    <div class="left-column">
-        <div class="genres">
+    <div class="row">
+      <div class="col-2">
+        <div class="genres side-menu">
             Gêneros
         </div>
-        <ul class="genre-list">
+        <ul class="genre-list side-menu">
           <li><%= link_to "Ficção", books_path(genre: "Ficção") %></li>
           <li><%= link_to "Romance", books_path(genre: "Romance") %></li>
           <li><%= link_to "Biografia", books_path(genre: "Biografia") %></li>
           <li><%= link_to "Autoajuda", books_path(genre: "Autoajuda") %></li>
           <li><%= link_to "Suspense", books_path(genre: "Suspense") %></li>
         </ul>
-        <a class="btn btn-lg btn-info" href="/books/my_titles">Meus Títulos</a>
-    </div>
-    <div class="book-suggestion">
-      <% @books.each do |book| %>
-      <%= link_to book_path(book) do %>
-        <div class="book-box" onclick="selectBook('O Livreiro de Cabul')">
-        <% if book.image.nil? %>
-        <div class="border border-5">
-          <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px" %>
+        <a class="btn btn-lg btn-info btn-side-menu" href="/books/my_titles">Meus Títulos</a>
+      </div>
+      <div class="book-suggestion col-9">
+        <% @books.each do |book| %>
+          <%= link_to book_path(book) do %>
+            <div class="book-box" onclick="selectBook('O Livreiro de Cabul')">
+              <div class="border book-card">
+                <% if book.image.nil? %>
+                  <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png', width: "300px", height: "220px" %>
+                <% else  %>
+                  <%= image_tag book.image, width: "300px", height: "220px" %>
+                <% end %>
+                <div class="book-title"><%= book.title.truncate(22) %></div>
+                <div class="book-author"><%= book.author_name %></div>
+                <div class="book-genre"><%= book.genre %></div>
+                <div class="book-price">R$<%= book.price %></div>
+                <% if book.rents.count.zero? %>
+                  <%= simple_form_for [book, @rent] do |f| %>
+                    <%= f.submit "Quero aluguar", class: "btn btn-dark" %>
+                  <% end %>
+                <% else %>
+                  <span class="badge rounded-pill text-bg-danger">Título indisponível</span>
+                <% end %>
 
-        <% else  %>
-        <%= image_tag book.image, width: "300px" %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-            <div class="book-title"><%= book.title.truncate(22) %></div>
-            <div class="book-author"><%= book.author_name %></div>
-            <div class="book-genre"><%= book.genre %></div>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
+      </div>
     </div>
