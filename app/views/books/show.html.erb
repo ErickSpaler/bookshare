@@ -1,5 +1,7 @@
 <div class="container mt-5">
   <div class="row">
+
+
     <div class="col-3">
     <% if @book.image.nil? %>
         <%= image_tag 'https://cdn-icons-png.flaticon.com/512/2232/2232688.png' %>
@@ -7,12 +9,15 @@
         <%= image_tag @book.image %>
         <% end %>
     </div>
-    <div class="col-9">
-      <h2>Book: <%= @book.title %></h2>
-      <h4>Author Name: <%= @book.author_name %></h4>
-      <h4>Description: <%= @book.description %></h4>
-      <h4>Published Year: <%= @book.published_year %></h4>
-      <h4>Genre: <%= @book.genre %></h4>
+
+
+    <div class="card-book col-8">
+      <div class="card-product-infos">
+      <h3>Book: <%= @book.title %></h3>
+      <p>Author Name: <%= @book.author_name %></p>
+      <p>Description: <%= @book.description %></p>
+      <p>Published Year: <%= @book.published_year %></p>
+      <p>Genre: <%= @book.genre %></p>
 
       <% if @book.rents.count.zero? %>
         <%= simple_form_for [@book, @rent] do |f| %>
@@ -22,17 +27,24 @@
         <span class="badge rounded-pill text-bg-danger">Título indisponível</span>
       <% end %>
     </div>
+    </div>
   </div>
 
   <div class="mt-3">
-  <h3>Price: R$10 </h3>
+  <h3>Price: <%= @book.price %> </h3>
   </div>
 
-  <div class="user-info d-flex flex-column bd-highlight mt-3 mb-3 border border-secondary">
-    <h3>User Info</h3>
-    <h4>Name: <%= @book.user.name %></h4>
-    <h4>Address: <%= @book.user.address %></h4>
-  </div>
 
-  <%= link_to "Back to home", books_path, class: "btn btn-dark" %>
+
+    <div class="card-product-infos">
+    <h4>User Info</h4>
+    <p>Name: <%= @book.user.name %></p>
+    <p>Address: <%= @book.user.address %></p>
+    </div>
+
+
+
+<%= link_to "Back to home", books_path, class: "btn btn-dark" %>
+
+
 </div>
